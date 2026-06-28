@@ -44,7 +44,7 @@ struct FirstTimeUserView: View {
             
             // MARK: - Action
             GeneralButton(text: "Start your first review", iconName: "arrow.right") {
-                
+                // TODO: - Do an action here for first review
             }
         }
         .padding()

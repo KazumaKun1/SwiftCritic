@@ -23,6 +23,10 @@ class AppCoordinator {
     }
     
     func goBack() {
+        if path.isEmpty {
+            return
+        }
+        
         path.removeLast()
     }
     

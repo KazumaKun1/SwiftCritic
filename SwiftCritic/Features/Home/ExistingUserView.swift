@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExistingUserView: View {
     var body: some View {
+        // TODO: - Create the UI for this in the next PR
         Text("Existing User View")
     }
 }

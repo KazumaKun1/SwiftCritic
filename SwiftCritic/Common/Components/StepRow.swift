@@ -25,7 +25,6 @@ struct StepRow: View {
             Text(text)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundColor(.primary)
-                .font(.default)
             Spacer()
         }
     }

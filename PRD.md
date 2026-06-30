@@ -32,10 +32,31 @@ SwiftCritic is a native iOS app that lets Swift developers practice code review 
 
 Before starting a session, the user selects:
 
-- **Category:** Naming / Logic / Security / Memory / Architecture
+- **Category:** Design Patterns / Programming Principles / Logic & Control Flow / Memory Management / Concurrency / API Design
+- **Subcategory:** one subcategory per category (single-select, no "All" option — forces intentional practice)
 - **Difficulty:** Easy / Medium / Hard (see difficulty model below)
 
-The session retains these settings. On retry, the same difficulty and category are kept automatically. The user can exit the session at any time to change settings.
+The session retains these settings. On retry, the same difficulty, category, and subcategory are kept automatically. The user can exit the session at any time to change settings.
+
+#### Categories & Subcategories
+
+**Design Patterns**
+Builder · Factory · Singleton · Adapter · Facade · Observer · Strategy · Decorator · Composite · Coordinator
+
+**Programming Principles**
+SOLID · DRY · YAGNI · KISS · Separation of Concerns
+
+**Logic & Control Flow**
+Off-by-one · Optional misuse · Missing guard clause · Force unwrap · Condition errors
+
+**Memory Management**
+Retain cycles · Weak/unowned misuse · Closure captures · ARC pitfalls · Deinit not called
+
+**Concurrency**
+Actor isolation · Race conditions · Task misuse · Async/await errors · Sendable violations
+
+**API Design**
+Naming clarity · Access control · Leaking internals · Function signatures · Protocol misuse
 
 #### Difficulty Model
 
@@ -85,6 +106,15 @@ Results are presented in three buckets:
 
 A short paragraph of constructive feedback is generated summarizing the review quality (e.g., "You caught the security issue quickly but tend to overlook naming conventions.").
 
+**Score rating** is derived from the numeric score (0–100) and displayed alongside it:
+
+| Score | Rating |
+|-------|--------|
+| 90–100 | Excellent |
+| 70–89 | Good |
+| 50–69 | Fair |
+| 0–49 | Needs Improvement |
+
 After viewing results, the user can tap **Try Again** to get a new challenge at the same difficulty and category, or exit to reconfigure.
 
 ---
@@ -106,13 +136,13 @@ A local scoring system to track growth over time. No leaderboard or online sync 
 
 **Tracked per session:**
 - Overall score (0–100) from the model's evaluation
-- Category breakdown: performance across Naming, Logic, Security, Memory, Architecture
+- Category breakdown: performance across Design Patterns, Programming Principles, Logic & Control Flow, Memory Management, Concurrency, API Design
 - Streaks (consecutive days with at least one completed review)
 
 **History screen:**
 A list of past sessions showing date, difficulty, category, and score. Users can tap into any session to re-read the result and their original comments.
 
-The goal is to surface patterns: "You're strong on Logic but consistently miss Security issues."
+The goal is to surface patterns: "You're strong on Design Patterns but consistently miss Memory Management issues."
 
 **Practice Weak Areas (v2):**
 A smart button on the challenge configuration screen — "Practice based on weak areas" — that auto-selects the category the user scores lowest in. Deferred to v2 once enough history data exists to make it meaningful.

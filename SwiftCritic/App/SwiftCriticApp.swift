@@ -42,6 +42,7 @@ struct SwiftCriticApp: App {
                         }
                     }
             }
+            .tint(.orange)
             .environment(coordinator)
         }
         .modelContainer(sharedModelContainer)

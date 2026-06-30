@@ -12,6 +12,7 @@ struct NavigationTitleView: View {
         HStack {
             Image(systemName: "ellipsis.curlybraces")
                 .font(.title)
+                .foregroundStyle(.tint)
             Text("SwiftCritic")
                 .font(.subheadline)
                 .fontWeight(.bold)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StepRow: View {
+struct NumberedStepRow: View {
     var number: Int
     var text: String
     var color: Color
@@ -31,5 +31,5 @@ struct StepRow: View {
 }
 
 #Preview {
-    StepRow(number: 1, text: "Onboarding Step here", color: .blue)
+    NumberedStepRow(number: 1, text: "Onboarding Step here", color: .blue)
 }

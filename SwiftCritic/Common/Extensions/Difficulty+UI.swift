@@ -18,7 +18,7 @@ extension Difficulty {
     var color: Color {
         switch self {
         case .easy: .green
-        case .medium: .yellow
+        case .medium: .orange
         case .hard: .red
         case .custom: .gray
         }

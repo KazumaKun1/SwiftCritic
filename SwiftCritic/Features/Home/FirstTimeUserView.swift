@@ -55,7 +55,7 @@ private extension FirstTimeUserView {
             Text("Find the bug before the compiler does.")
                 .font(.title)
                 .padding(.vertical, 10)
-            Text("Read an AI-generated Swift snippet. flag the lines you think are wrong, and get scored on what you caught, missed and over-called.")
+            Text("Read an AI-generated Swift snippet, flag the lines you think are wrong, and get scored on what you caught, missed and over-called.")
                 .font(.subheadline)
                 .padding(.bottom)
             NumberedStepRow(number: 1, text: "Pick a category & difficulty", color: .pink)

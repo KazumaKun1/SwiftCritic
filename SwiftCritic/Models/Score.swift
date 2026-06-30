@@ -9,6 +9,7 @@ nonisolated struct Score: Codable {
     let value: Int
     
     init(value: Int) {
+        precondition((0...100).contains(value), "Score must be between 0 and 100.")
         self.value = value
     }
     

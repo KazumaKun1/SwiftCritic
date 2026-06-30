@@ -12,7 +12,7 @@ extension Score.Rating {
         switch self {
         case .excellent: .green
         case .good: .blue
-        case .fair: .yellow
+        case .fair: .orange
         case .needsImprovement: .red
         }
     }

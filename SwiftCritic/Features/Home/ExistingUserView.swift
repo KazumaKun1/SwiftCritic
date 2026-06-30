@@ -11,6 +11,7 @@ import SwiftData
 struct ExistingUserView: View {
     @Query var configurations: [SessionConfiguration]
     let sessions: [SessionRecord]
+    // TODO: - Remove mock configurations once done for the main feature.
     let mockConfigurations: [SessionConfiguration]
     
     var body: some View {

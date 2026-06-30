@@ -17,6 +17,7 @@ struct HomeView: View {
 //        } else {
 //            ExistingUserView(sessions: sessions)
 //        }
+        // TODO: - Remove this once the whole feature for home is working. As of now, we will use mock configurations.
         ExistingUserView(sessions: sessions, mockConfigurations: SessionConfiguration.mocks)
     }
 }

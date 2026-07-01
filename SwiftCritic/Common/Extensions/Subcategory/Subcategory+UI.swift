@@ -7,7 +7,7 @@
 
 // TODO: - For future implementation, find a way to make this avoid OCP violation even enum are supposed to be exhaustive.
 
-extension ProgrammingPrincipleSubcategory {
+nonisolated extension ProgrammingPrincipleSubcategory {
     var name: String {
         switch self {
         case .solid: "SOLID"
@@ -19,7 +19,7 @@ extension ProgrammingPrincipleSubcategory {
     }
 }
 
-extension LogicControlFlowSubcategory {
+nonisolated extension LogicControlFlowSubcategory {
     var name: String {
         switch self {
         case .offByOne: "Off By One"
@@ -31,7 +31,7 @@ extension LogicControlFlowSubcategory {
     }
 }
 
-extension MemoryManagementSubcategory {
+nonisolated extension MemoryManagementSubcategory {
     var name: String {
         switch self {
         case .retainCycles: "Retain Cycles"
@@ -43,7 +43,7 @@ extension MemoryManagementSubcategory {
     }
 }
 
-extension ConcurrencySubcategory {
+nonisolated extension ConcurrencySubcategory {
     var name: String {
         switch self {
         case .actorIsolation: "Actor Isolation"
@@ -55,7 +55,7 @@ extension ConcurrencySubcategory {
     }
 }
 
-extension APIDesignSubcategory {
+nonisolated extension APIDesignSubcategory {
     var name: String {
         switch self {
         case .namingClarity: "Naming Clarity"

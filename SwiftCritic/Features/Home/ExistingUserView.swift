@@ -78,7 +78,23 @@ struct ExistingUserView: View {
             
             // MARK: - Action
             GeneralButton(text: "Start Review", iconName: "arrow.right") {
-                // TODO: - Do an action here for first review
+                // TODO: - Remove this for actual implementation from a view model. Right now, this is just for testing purposes
+                Task {
+                    do {
+                        let service = AIService()
+                        let evaluation = try await service.evaluateComments(
+                            challenge: .factoryPatternMock,
+                            feedback: .perfectReviewMock
+                        )
+                        print("Score: \(evaluation.score)")
+                        print("Caught: \(evaluation.caught.debugDescription)")
+                        print("Missed: \(evaluation.missed.debugDescription)")
+                        print("False positives: \(evaluation.falsePositives.debugDescription)")
+                        print("Feedback: \(evaluation.feedback)")
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
             }
         }
         .padding(.horizontal)

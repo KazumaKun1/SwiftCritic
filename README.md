@@ -6,6 +6,16 @@ Fully offline — powered by Apple's on-device Foundation Models framework. No a
 
 ---
 
+> **⚠️ Foundation Models Constraint**
+>
+> This app targets Apple's on-device Foundation Models framework (iOS 26+), which runs a ~3B parameter model. Through extensive testing during development, it became clear that this model cannot reliably generate intentionally flawed Swift code or consistently evaluate user reviews. The AI output is non-deterministic — some runs produce correct results, others hallucinate issues, contradict themselves within a single response, or trigger Apple's content guardrails on legitimate developer content.
+>
+> This project is shipped and documented honestly as an exploration of what the current Foundation Models framework can and cannot do for a developer tooling use case. The architecture is forward-compatible — when Apple ships an improved on-device model in a future iOS release, the app benefits without requiring architectural changes.
+>
+> See [PRD.md](PRD.md) for a detailed breakdown of observed failure modes and root cause analysis.
+
+---
+
 ## Features
 
 - **AI-generated challenges** — Swift code snippets with intentional issues, generated on-device

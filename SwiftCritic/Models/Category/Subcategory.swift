@@ -5,7 +5,7 @@
 //  Created by Arviejhay Alejandro on 6/29/26.
 //
 
-enum DesignPatternSubcategory: String, Codable, CaseIterable {
+nonisolated enum DesignPatternSubcategory: String, Codable, CaseIterable {
     case builder
     case factory
     case singleton
@@ -18,7 +18,7 @@ enum DesignPatternSubcategory: String, Codable, CaseIterable {
     case coordinator
 }
 
-enum ProgrammingPrincipleSubcategory: String, Codable, CaseIterable {
+nonisolated enum ProgrammingPrincipleSubcategory: String, Codable, CaseIterable {
     case solid
     case dry
     case yagni
@@ -26,7 +26,7 @@ enum ProgrammingPrincipleSubcategory: String, Codable, CaseIterable {
     case separationOfConcerns
 }
 
-enum LogicControlFlowSubcategory: String, Codable, CaseIterable {
+nonisolated enum LogicControlFlowSubcategory: String, Codable, CaseIterable {
     case offByOne
     case optionalMisuse
     case missingGuardClause
@@ -34,7 +34,7 @@ enum LogicControlFlowSubcategory: String, Codable, CaseIterable {
     case conditionError
 }
 
-enum MemoryManagementSubcategory: String, Codable, CaseIterable {
+nonisolated enum MemoryManagementSubcategory: String, Codable, CaseIterable {
     case retainCycles
     case weakUnownedMisuse
     case closureCaptures
@@ -42,7 +42,7 @@ enum MemoryManagementSubcategory: String, Codable, CaseIterable {
     case deinitNotCalled
 }
 
-enum ConcurrencySubcategory: String, Codable, CaseIterable {
+nonisolated enum ConcurrencySubcategory: String, Codable, CaseIterable {
     case actorIsolation
     case raceConditions
     case taskMisuse
@@ -50,7 +50,7 @@ enum ConcurrencySubcategory: String, Codable, CaseIterable {
     case sendableViolations
 }
 
-enum APIDesignSubcategory: String, Codable, CaseIterable {
+nonisolated enum APIDesignSubcategory: String, Codable, CaseIterable {
     case namingClarity
     case accessControl
     case leakingInternals

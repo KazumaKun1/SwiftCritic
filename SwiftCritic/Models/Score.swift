@@ -22,7 +22,7 @@ nonisolated struct Score: Codable {
         }
     }
     
-    enum Rating {
+    nonisolated enum Rating {
         case excellent
         case good
         case fair

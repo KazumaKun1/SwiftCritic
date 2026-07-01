@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Score.Rating {
+nonisolated extension Score.Rating {
     var color: Color {
         switch self {
         case .excellent: .green

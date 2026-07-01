@@ -197,6 +197,41 @@ True multi-file support (tab-based UI, separate file contexts) is deferred to v2
 
 ---
 
+## Known Limitations — Apple Foundation Models (v1)
+
+Extensive testing during development revealed that the on-device ~3B parameter model has fundamental limitations for this use case. These are documented here honestly for transparency.
+
+### Challenge Generation
+
+The model cannot reliably generate intentionally flawed Swift code. Core failure modes observed:
+
+- **Hallucinated issue descriptions** — the model fabricates defects that do not exist in its own generated code, referencing closures, properties, or constructs that are not present in the snippet
+- **Ignores category** — generated code frequently does not match the selected category (e.g., producing a linked list for an ARC Pitfalls challenge)
+- **Compile errors in output** — the model generates syntactically invalid Swift (e.g., `deinit` on structs, `weak` references on value types, duplicate `deinit` blocks, unclosed string literals)
+- **Comments labeling defects** — despite explicit constraints, the model adds `// Defect 1:` style comments that directly reveal the issues to the user
+- **Safety guardrails triggered** — Apple's on-device content filter fires unpredictably on legitimate developer content (observed on a factory pattern challenge), returning an error with no recovery path
+
+Root cause: the model is instruction-tuned to produce *correct* outputs. Asking it to deliberately introduce flawed code works against its own training. It generates code that looks correct to it, then fabricates issues when asked to list defects.
+
+### Evaluation
+
+The model shows better performance on evaluation (comparing user comments against a known defect list) but remains inconsistent:
+
+- **Consistent hallucination in missed defects** — the model invents additional missed defects not present in the known list, even with explicit instructions to use only the provided list
+- **Internal contradictions** — the same item appears simultaneously in `caught`, `missed`, and `falsePositives` within a single response
+- **Broken severity comparison** — the model reports a severity mismatch when the user's severity and known severity are identical
+- **Score formula ignored** — the model does not follow the explicit scoring formula provided in the `@Guide`, producing arbitrary scores
+
+Across 4 evaluation runs on a controlled input with a known ground truth, only 1 run produced a fully correct result (25% reliability).
+
+### Architectural Decision
+
+Given these limitations, v1 uses **curated challenges** — code snippets written or verified by a capable model (e.g., Gemini 1.5 Pro, Claude) and bundled in the app — rather than on-device generation. The Foundation Models session is used only for evaluation (Turn 2), where performance is more acceptable despite inconsistency.
+
+The app architecture is forward-compatible: when Apple ships a larger or better-calibrated on-device model in a future iOS release, the generation path can be restored without changes to the rest of the codebase.
+
+---
+
 ## Out of Scope (v1)
 
 - Online leaderboard or social features

@@ -25,9 +25,9 @@ final class SessionConfiguration {
 extension SessionConfiguration {
     static var mocks: [SessionConfiguration] {
         [
-            SessionConfiguration(difficulty: .easy, category: .apiDesign(.accessControl), date: .now),
+            SessionConfiguration(difficulty: .easy, category: .designPatterns(.factory), date: .now),
             SessionConfiguration(difficulty: .medium, category: .concurrency(.actorIsolation), date: .now),
-            SessionConfiguration(difficulty: .hard, category: .logicControlFlow(.offByOne), date: .now)
+            SessionConfiguration(difficulty: .hard, category: .memoryManagement(.arcPitfalls), date: .now)
         ]
     }
 }

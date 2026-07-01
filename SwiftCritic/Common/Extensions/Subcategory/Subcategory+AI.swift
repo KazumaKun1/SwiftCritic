@@ -5,7 +5,7 @@
 //  Created by Arviejhay Alejandro on 7/1/26.
 //
 
-extension ProgrammingPrincipleSubcategory {
+nonisolated extension ProgrammingPrincipleSubcategory {
     var promptHint: String {
         switch self {
         case .solid: "a Swift class that violates one of the SOLID principles — e.g. a class doing too much, or a subclass breaking its parent's contract"
@@ -17,7 +17,7 @@ extension ProgrammingPrincipleSubcategory {
     }
 }
 
-extension LogicControlFlowSubcategory {
+nonisolated extension LogicControlFlowSubcategory {
     var promptHint: String {
         switch self {
         case .offByOne: "a Swift function with a loop or index calculation that is off by one"
@@ -29,7 +29,7 @@ extension LogicControlFlowSubcategory {
     }
 }
 
-extension MemoryManagementSubcategory {
+nonisolated extension MemoryManagementSubcategory {
     var promptHint: String {
         switch self {
         case .retainCycles: "two Swift classes that hold strong references to each other, preventing ARC from deallocating either"
@@ -41,7 +41,7 @@ extension MemoryManagementSubcategory {
     }
 }
 
-extension ConcurrencySubcategory {
+nonisolated extension ConcurrencySubcategory {
     var promptHint: String {
         switch self {
         case .actorIsolation: "a Swift actor whose isolated state is accessed incorrectly from outside the actor without await"
@@ -53,7 +53,7 @@ extension ConcurrencySubcategory {
     }
 }
 
-extension APIDesignSubcategory {
+nonisolated extension APIDesignSubcategory {
     var promptHint: String {
         switch self {
         case .namingClarity: "a Swift function or type with misleading or unclear names that do not reflect their actual behavior"

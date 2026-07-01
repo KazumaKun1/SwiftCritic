@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Date {
+nonisolated extension Date {
     var relativeDisplay: String {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full

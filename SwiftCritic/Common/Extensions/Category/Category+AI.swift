@@ -5,7 +5,7 @@
 //  Created by Arviejhay Alejandro on 6/30/26.
 //
 
-extension Category {
+nonisolated extension Category {
     var promptHint: String {
         switch self {
         case .designPatterns(let sub):

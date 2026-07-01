@@ -7,7 +7,7 @@
 
 // TODO: - For future implementation, find a way to make this avoid OCP violation even enum are supposed to be exhaustive.
 
-extension Category {
+nonisolated extension Category {
     var name: String {
         switch self {
         case .designPatterns: "Design Patterns"

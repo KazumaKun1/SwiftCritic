@@ -5,7 +5,7 @@
 //  Created by Arviejhay Alejandro on 6/30/26.
 //
 
-extension Subtlety {
+nonisolated extension Subtlety {
     var name: String {
         switch self {
         case .obvious: "Obvious"

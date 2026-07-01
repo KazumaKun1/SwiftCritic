@@ -5,7 +5,7 @@
 //  Created by Arviejhay Alejandro on 6/30/26.
 //
 
-extension SnippetLength {
+nonisolated extension SnippetLength {
     var promptHint: String {
         switch self {
         case .short:  "A single function or method — keep it under 20 lines"

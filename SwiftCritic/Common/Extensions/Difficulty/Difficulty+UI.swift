@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-extension Difficulty {
+nonisolated extension Difficulty {
     var name: String {
         switch self {
         case .easy: "Easy"

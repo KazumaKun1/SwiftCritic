@@ -5,7 +5,7 @@
 //  Created by Arviejhay Alejandro on 7/1/26.
 //
 
-extension Difficulty {
+nonisolated extension Difficulty {
     var snippetLength: SnippetLength {
         switch self {
         case .easy: .short

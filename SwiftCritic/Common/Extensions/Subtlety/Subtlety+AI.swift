@@ -5,7 +5,7 @@
 //  Created by Arviejhay Alejandro on 7/1/26.
 //
 
-extension Subtlety {
+nonisolated extension Subtlety {
     var promptHint: String {
         switch self {
         case .obvious: "Surface — issues should be immediately noticeable to a developer scanning the code"
